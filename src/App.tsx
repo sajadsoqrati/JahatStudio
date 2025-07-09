@@ -1,4 +1,6 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Layout } from "./Layout";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -13,7 +15,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="./pages/About.tsx" element={<About name="ali" />} />
+            <Route path="./pages/About.tsx" element={<About />} />
             <Route path="./pages/Contact.tsx" element={<Contact />} />
             <Route path="./pages/Project.tsx" element={<Projects />} />
             <Route path="./pages/Education.tsx" element={<Education />} />
