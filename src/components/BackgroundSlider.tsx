@@ -14,20 +14,20 @@ export const BackgroundSlider = () => {
     dots: true,
     autoplay: true,
     infinite: true,
-    speed: 4000,
-    autoplaySpeed: 5000,
+    speed: 1000,
+    autoplaySpeed: 4000,
     arrows: false,
     fade: true,
     pauseOnHover: false,
   };
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-screen z-0">
+      <div className="fixed top-0 left-0 w-screen h-screen  pointer-events: none">
         <Slider {...settings}>
           {images.map((img, i) => (
             <div key={i}>
               <div
-                className="w-screen h-screen bg-cover bg-center"
+                className="w-screen h-screen bg-center bg-no-repeat  bg-contain "
                 style={{ backgroundImage: `url(${img})` }}
               />
             </div>

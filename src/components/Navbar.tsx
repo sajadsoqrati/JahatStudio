@@ -6,7 +6,7 @@ import "../index.css";
 import { useState } from "react";
 
 export function Navbar() {
-  const [className, setClassName] = useState<string>("text-white");
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const navLinks: string[] = [
     "HOME",
     "ABOUT",
@@ -26,24 +26,30 @@ export function Navbar() {
     "/Fa.tsx",
   ];
 
-  function clickHandler() {
-    setClassName(() => "text-green-300");
-  }
   return (
     <>
-      <nav className="relative z-10 font-normal flex justify-center gap-10 my-11">
+      <nav className="text-white relative z-10 font-normal flex justify-center gap-10 mt-12  ">
         {navLinks.map((item, i) => (
           <Link key={i} to={url[i]}>
-            <button className={className} onClick={clickHandler}>
+            <button
+              onClick={() => setActiveIndex(i)}
+              className={i === activeIndex ? "text-[rgb(104,200,163)]" : ""}
+            >
               {item}
             </button>
           </Link>
         ))}
       </nav>
-      <nav className=" relative z-20 items-start font-large gap-4 flex flex-col mt-[350px] ml-[2.5rem]">
-        <FaLinkedinIn color="white" size={24} />
-        <FaTelegram color="white" size={24} />
-        <FaInstagram color="white" size={24} />
+      <nav className=" relative z-10 items-start  font-large gap-4 flex flex-col items-center top-65 ml-[10rem] pointer-events: none">
+        <a href="https://www.linkedin.com">
+          <FaLinkedinIn color="white" size={24} />
+        </a>
+        <a href="https://telegram.org">
+          <FaTelegram color="white" size={24} />
+        </a>
+        <a href="https://www.instagram.com/">
+          <FaInstagram color="white" size={24} />
+        </a>
       </nav>
     </>
   );

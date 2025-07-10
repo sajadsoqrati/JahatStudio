@@ -2,21 +2,25 @@
 .slick-dots {
   position: absolute;
   top: 50%;
-  right:2.5rem;
+  right:10rem;
   transform: translateY(-50%);
   display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   gap: 0.5rem;
-  z-index: 20;}
+
+  
+ }
 .slick-dots li button:before {
   font-size: 9px;
   color:rgba(217, 217, 217, 0.6);
-  
+
+ 
 }
 
 .slick-dots li.slick-active button:before {
   color:#fff;
   opacity: 1;
-}
+
+ }
