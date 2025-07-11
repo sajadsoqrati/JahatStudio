@@ -15,11 +15,11 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="./pages/About.tsx" element={<About />} />
-            <Route path="./pages/Contact.tsx" element={<Contact />} />
-            <Route path="./pages/Project.tsx" element={<Projects />} />
-            <Route path="./pages/Education.tsx" element={<Education />} />
-            <Route path="./pages/Fa.tsx" element={<Fa />} />
+            <Route path="About.tsx" element={<About />} />
+            <Route path="Contact.tsx" element={<Contact />} />
+            <Route path="Projects.tsx" element={<Projects />} />
+            <Route path="Education.tsx" element={<Education />} />
+            <Route path="Fa.tsx" element={<Fa />} />
           </Route>
         </Routes>
       </Router>

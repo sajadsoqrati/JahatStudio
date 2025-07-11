@@ -1,9 +1,9 @@
-import { Outlet } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
+import { Outlet } from "react-router-dom";
 export function Layout() {
   return (
     <>
-      <Navbar />
+      <Navbar className="text-white relative z-10  font-normal flex justify-center gap-10 mt-12  " />
       <main>
         <Outlet />
       </main>

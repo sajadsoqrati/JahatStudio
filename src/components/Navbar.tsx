@@ -4,8 +4,10 @@ import { FaTelegram } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import "../index.css";
 import { useState } from "react";
-
-export function Navbar() {
+interface NavbarProps {
+  className: string;
+}
+export function Navbar(props: NavbarProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const navLinks: string[] = [
     "HOME",
@@ -28,7 +30,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="text-white relative z-10 font-normal flex justify-center gap-10 mt-12  ">
+      <nav className={props.className}>
         {navLinks.map((item, i) => (
           <Link key={i} to={url[i]}>
             <button
@@ -40,7 +42,8 @@ export function Navbar() {
           </Link>
         ))}
       </nav>
-      <nav className=" relative z-10 items-start  font-large gap-4 flex flex-col items-center top-65 ml-[10rem] pointer-events: none">
+
+      <nav className=" relative z-10 items-start  font-large gap-4 flex flex-col items-center top-65 ml-[10rem] pointer-events-none">
         <a href="https://www.linkedin.com">
           <FaLinkedinIn color="white" size={24} />
         </a>
