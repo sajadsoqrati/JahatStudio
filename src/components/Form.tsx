@@ -1,6 +1,18 @@
 import { useForm, type FieldValues } from "react-hook-form";
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: number;
+  topic: string;
+  help: string;
+}
 const Form = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
   const onSubmit = (data: FieldValues) => {
     console.log(data);
   };
@@ -15,21 +27,35 @@ const Form = () => {
         </label>
         <div>
           <input
-            {...register("firstName")}
+            placeholder="First"
+            {...register("firstName", { required: true, minLength: 3 })}
             type="text"
             className=" bg-white text-black rounded-sm  mr-2"
           />
-
           <input
-            {...register("lastName")}
+            placeholder="Last"
+            {...register("lastName", { required: true, minLength: 3 })}
             type="text"
             className=" bg-white text-black rounded-sm ml-2"
           />
         </div>
-        <span className="flex ml-1 mt-1 ">
-          <p className="felx justify-start">First</p>
-          <p className="ml-40">Last</p>
-        </span>
+        {errors.firstName?.type === "required" && (
+          <p className="text-red-500">The FirstName Field Is Required</p>
+        )}
+        {errors.firstName?.type === "minLength" && (
+          <p className="text-red-500">
+            The FirstName must be at least 3 characters.
+          </p>
+        )}
+        {errors.lastName?.type === "required" && (
+          <p className="text-red-500">The Last Name Field Is Required</p>
+        )}
+        {errors.lastName?.type === "minLength" && (
+          <p className="text-red-500">
+            The Last Name must be at least 3 characters.
+          </p>
+        )}
+
         <label
           htmlFor="emailAddress"
           className=" text-2xl mb-1  mt-6 text-white "
@@ -37,10 +63,13 @@ const Form = () => {
           Email Address*
         </label>
         <input
-          {...register("email")}
+          {...register("email", { required: true })}
           type="email"
           className="bg-white text-black pr-48 rounded-sm"
         />
+        {errors.email?.type === "required" && (
+          <p>The Email Field Is Required</p>
+        )}
         <label htmlFor="phone" className=" text-2xl mb-1.5  mt-8 text-white ">
           Phone*
         </label>
