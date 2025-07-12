@@ -1,18 +1,32 @@
 import { useForm, type FieldValues } from "react-hook-form";
-interface FormData {
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+const schema = z.object({
+  firstName: z.string().min(3, { message: "must be at least 3 characters." }),
+  lastName: z.string().min(3, { message: "must be at least 3 characters." }),
+  email: z.string().min(5, { message: "e-mail is required" }),
+  tel: z.number({ message: "tel number is required" }),
+  topic: z.string(),
+  help: z.string(),
+});
+
+type FormData = z.infer<typeof schema>;
+/*interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  phone: number;
+  tel: number;
   topic: string;
   help: string;
-}
+}*/
+
 const Form = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
+
   const onSubmit = (data: FieldValues) => {
     console.log(data);
   };
@@ -28,33 +42,33 @@ const Form = () => {
         <div>
           <input
             placeholder="First"
-            {...register("firstName", { required: true, minLength: 3 })}
+            {...register("firstName" /*{ required: true, minLength: 3 }*/)}
             type="text"
             className=" bg-white text-black rounded-sm  mr-2"
           />
           <input
             placeholder="Last"
-            {...register("lastName", { required: true, minLength: 3 })}
+            {...register("lastName" /*{ required: true, minLength: 3 }*/)}
             type="text"
             className=" bg-white text-black rounded-sm ml-2"
           />
         </div>
-        {errors.firstName?.type === "required" && (
-          <p className="text-red-500">The FirstName Field Is Required</p>
+        {errors.firstName /*?.type === "required"*/ && (
+          <p className="text-red-500">{errors.firstName.message}</p>
         )}
-        {errors.firstName?.type === "minLength" && (
+        {/* {errors.firstName?.type === "minLength" && (
           <p className="text-red-500">
             The FirstName must be at least 3 characters.
           </p>
+        )} */}
+        {errors.lastName && (
+          <p className="text-red-500">{errors.lastName.message}</p>
         )}
-        {errors.lastName?.type === "required" && (
-          <p className="text-red-500">The Last Name Field Is Required</p>
-        )}
-        {errors.lastName?.type === "minLength" && (
+        {/* {errors.lastName?.type === "minLength" && (
           <p className="text-red-500">
             The Last Name must be at least 3 characters.
           </p>
-        )}
+        )} */}
 
         <label
           htmlFor="emailAddress"
@@ -67,20 +81,23 @@ const Form = () => {
           type="email"
           className="bg-white text-black pr-48 rounded-sm"
         />
-        {errors.email?.type === "required" && (
+        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+        {/* {errors.email?.type === "required" && (
           <p>The Email Field Is Required</p>
-        )}
+        )}  */}
         <label htmlFor="phone" className=" text-2xl mb-1.5  mt-8 text-white ">
           Phone*
         </label>
         <input
-          {...register("tel")}
+          {...register("tel", { valueAsNumber: true })}
           type="tel"
           className="bg-white text-black pr-48 rounded-sm"
         />
+        {errors.tel && <p className="text-red-500">{errors.tel.message}</p>}
         <label htmlFor="topic" className=" text-2xl mb-1.5  mt-8 text-white ">
-          Topic*
+          Topic
         </label>
+
         <input
           {...register("topic")}
           type="text"
@@ -101,4 +118,3 @@ const Form = () => {
 };
 
 export default Form;
-/**/
