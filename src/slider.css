@@ -2,7 +2,7 @@
 .slick-dots {
   position: absolute;
   top: 50%;
-  right:10rem;
+  right:2.5rem;
   transform: translateY(-50%);
   display: flex !important;
   flex-direction: column;

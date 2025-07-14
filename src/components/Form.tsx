@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 const schema = z.object({
   firstName: z.string().min(3, { message: "must be at least 3 characters." }),
   lastName: z.string().min(3, { message: "must be at least 3 characters." }),
-  email: z.string().min(5, { message: "e-mail is required" }),
+  email: z.string().min(5, { message: "E-mail is required" }),
   tel: z.number({ message: "tel number is required" }),
   topic: z.string(),
   help: z.string(),
@@ -61,14 +61,6 @@ const Form = () => {
             The FirstName must be at least 3 characters.
           </p>
         )} */}
-        {errors.lastName && (
-          <p className="text-red-500">{errors.lastName.message}</p>
-        )}
-        {/* {errors.lastName?.type === "minLength" && (
-          <p className="text-red-500">
-            The Last Name must be at least 3 characters.
-          </p>
-        )} */}
 
         <label
           htmlFor="emailAddress"
@@ -116,5 +108,4 @@ const Form = () => {
     </form>
   );
 };
-
 export default Form;

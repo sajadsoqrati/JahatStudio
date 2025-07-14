@@ -43,7 +43,7 @@ export function Navbar(props: NavbarProps) {
         ))}
       </nav>
 
-      <nav className=" relative z-10 items-start  font-large gap-4 flex flex-col items-center top-65 ml-[10rem] pointer-events-none">
+      <nav className=" relative z-10 items-start  font-large gap-4 flex flex-col items-center top-73 ml-[2.5rem] pointer-events-none">
         <a href="https://www.linkedin.com">
           <FaLinkedinIn color="white" size={24} />
         </a>
