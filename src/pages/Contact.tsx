@@ -12,7 +12,11 @@ export function Contact() {
         </section>
         <section id="location">
           <a href="https://maps.app.goo.gl/4gRJqcTGBDdFUKKG8" target="_blank">
-            <img className="mb-10" src="src/assets/imges/map.svg" alt="map" />
+            <img
+              className="mb-10"
+              src="http://localhost:5000/images/map.svg"
+              alt="map"
+            />
           </a>
 
           <h1 className="text-3xl font-bold mb-4">Drop by or Give Us a Call</h1>

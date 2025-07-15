@@ -1,6 +1,5 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import { BackgroundSlider } from "../components/BackgroundSlider";
 export function Home() {
   return (
@@ -20,7 +19,7 @@ export function Home() {
         <div className="relative flex flex-col top-90 items-center ">
           <img
             className="relative w-50 mb-4"
-            src="src/assets/imges/logoj.svg"
+            src="http://localhost:5000/images/logoj.svg"
             alt="jahatStudioLogo"
           />
           <p className="relative font-extralight text-[#868686]">

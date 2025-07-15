@@ -3,11 +3,11 @@ import Slider from "react-slick";
 import "../slider.css";
 
 const images = [
-  "src/assets/imges/bgpics/p100.jpg",
-  "src/assets/imges/bgpics/P200.jpg",
-  "src/assets/imges/bgpics/P300.jpg",
-  "src/assets/imges/bgpics/P400.jpg",
-  "src/assets/imges/bgpics/P500.jpg",
+  "http://localhost:5000/images/bgpics/p100.jpg",
+  "http://localhost:5000/images/bgpics/P200.jpg",
+  "http://localhost:5000/images/bgpics/P300.jpg",
+  "http://localhost:5000/images/bgpics/P400.jpg",
+  "http://localhost:5000/images/bgpics/P500.jpg",
 ];
 export const BackgroundSlider = () => {
   const settings = {

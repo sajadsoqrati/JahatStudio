@@ -28,7 +28,11 @@ const Form = () => {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   const onSubmit = (data: FieldValues) => {
-    console.log(data);
+    fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
   };
   return (
     <form
@@ -104,7 +108,9 @@ const Form = () => {
           className="bg-white text-black  h-20  w-93 text-wrap rounded-sm"
         ></textarea>
       </div>
-      <button className="mt-6 font-bold text-xl">SUBMIT</button>
+      <button className="mt-6 hover:text-sky-400 	active:scale-90 font-bold text-xl">
+        SUBMIT
+      </button>
     </form>
   );
 };
