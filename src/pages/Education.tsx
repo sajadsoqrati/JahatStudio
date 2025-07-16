@@ -11,7 +11,7 @@ export function Education() {
           <p className="relative flex items-center justify-center  text-xl text-white mb-3 ">
             Jahat Creative Communications
           </p>
-          <h1 className=" relative flex justify-center w-auto text-6xl  text-white font-bold pointer-events-none ">
+          <h1 className=" relative flex justify-center w-auto text-6xl  text-white font-bold ">
             A Place To Create
           </h1>
         </span>
