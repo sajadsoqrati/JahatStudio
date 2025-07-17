@@ -12,9 +12,11 @@ export const Projects = () => {
   };
   return (
     <>
-      <Category onClick={clickHandler} />
-      <div className="fixed top-0 w-screen min-h-screen bg-black  text-white">
-        <div className=" grid grid-cols-3  gap-10 mx-[6rem] mt-[9rem]">
+      <div>
+        <Category onClick={clickHandler} />
+      </div>
+      <div className="w-screen min-h-screen bg-black text-white">
+        <div className=" grid grid-cols-3 gap-x-10 gap-y-6 mx-[6rem] pt-15">
           {page.map((project) => (
             <figure key={project.id}>
               <img
@@ -22,7 +24,7 @@ export const Projects = () => {
                 src={project.src}
                 alt={project.name}
               />
-              <figcaption className="relative bottom-10 hover:text-sky-400 text-xl  text-center">
+              <figcaption className=" hover:text-sky-400 text-la text-center mt-2 ">
                 {project.name}
               </figcaption>
             </figure>

@@ -7,26 +7,26 @@ export type ProjectsType = {
 export const projectsData: ProjectsType[] = [
   {
     id: 1,
-    name: "babri",
-    src: "http://localhost:5000/images/projects/Billboard-And-Crowd-01.jpg",
+    name: "Phonix",
+    src: "http://localhost:5000/images/projects/Billboard.jpg",
     category: "Billboard"
   },
   {
     id: 2,
-    name: "babri",
-    src: "http://localhost:5000/images/projects/Billboard-And-Crowd-01.jpg",
-    category: "Branding",
+    name: "Jewelry",
+    src: "http://localhost:5000/images/projects/Photography.jpg",
+    category: "Photography"
   },
   {
     id: 3,
-    name: "babri",
-    src: "http://localhost:5000/images/projects/Billboard-And-Crowd-01.jpg",
-    category: "Digital",
+    name: "CVA LoGo",
+    src: "http://localhost:5000/images/projects/Branding.jpg",
+    category: "Branding"
   },
   {
     id: 4,
-    name: "babri",
-    src: "http://localhost:5000/images/projects/Billboard-And-Crowd-01.jpg",
-    category: "Video",
+    name: "Ibit",
+    src: "http://localhost:5000/images/projects/Print.jpg",
+    category: "Print"
   },
 ];

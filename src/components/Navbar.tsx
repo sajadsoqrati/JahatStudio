@@ -31,7 +31,11 @@ export function Navbar(props: NavbarProps) {
         <Link key={i} to={url[i]}>
           <button
             onClick={() => setActiveIndex(i)}
-            className={i === activeIndex ? "text-[rgb(104,200,163)]" : ""}
+            className={
+              i === activeIndex
+                ? "text-[rgb(104,200,163)] cursor-pointer hover:text-[rgb(104,200,163)]	active:scale-90"
+                : "cursor-pointer hover:text-[rgb(104,200,163)]	active:scale-90 "
+            }
           >
             {item}
           </button>

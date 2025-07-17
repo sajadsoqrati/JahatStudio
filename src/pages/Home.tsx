@@ -8,7 +8,7 @@ export function Home() {
   return (
     <>
       <BackgroundSlider className="grid grid-row-span-2">
-        <Navbar className="text-white font-normal flex flex-auto  whitespace-nowrap justify-center gap-10 mt-5 mr-2" />
+        <Navbar className="text-white font-normal flex flex-auto cursor-pointer whitespace-nowrap justify-center gap-10 mt-5 mr-2" />
 
         <div className="grid grid-cols-[65px_1fr]">
           <div className="flex flex-col justify-center mb-54 ">

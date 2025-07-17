@@ -37,7 +37,7 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-xl py-4 pb-4 px-8 bg-[rgb(58,58,58)]"
+      className="rounded-xl py-4 pb-4 px-8 bg-[rgb(58,58,58)] w-109 "
     >
       <div className="flex flex-col items-start">
         <label htmlFor="Name" className=" text-2xl mb-1 text-white ">
@@ -108,9 +108,11 @@ const Form = () => {
           className="bg-white text-black  h-20  w-93 text-wrap rounded-sm"
         ></textarea>
       </div>
-      <button className="mt-6 hover:text-sky-400 	active:scale-90 font-bold text-xl">
-        SUBMIT
-      </button>
+      <div className=" flex justify-center">
+        <button className="mt-6 hover:text-sky-400 active:scale-90 font-bold text-xl">
+          SUBMIT
+        </button>
+      </div>
     </form>
   );
 };

@@ -1,33 +1,10 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { BackgroundSlider } from "../components/BackgroundSlider";
-export function Education() {
+import { Navbar } from "../components/Navbar";
+
+export const Education = () => {
   return (
-    <>
-      <div className="flex flex-col ">
-        <BackgroundSlider />
-
-        <span className=" relative flex top-38 justify-center flex-col z-0 w-content  ">
-          <p className="relative flex items-center justify-center  text-xl text-white mb-3 ">
-            Jahat Creative Communications
-          </p>
-          <h1 className=" relative flex justify-center w-auto text-6xl  text-white font-bold ">
-            A Place To Create
-          </h1>
-        </span>
-
-        <div className="relative flex flex-col top-90 items-center ">
-          <img
-            className="relative w-50 mb-4"
-            src="src/assets/imges/logoj.svg"
-            alt="jahatStudioLogo"
-          />
-          <p className="relative font-extralight text-[#868686]">
-            Jahat Studio| Full Service Advertising & Marketing Agency | since
-            2019
-          </p>
-        </div>
-      </div>
-    </>
+    <BackgroundSlider className="grid grid-row-span-2">
+      <Navbar className="text-white font-normal flex flex-auto cursor-pointer whitespace-nowrap justify-center gap-10 mt-5 mr-2" />
+    </BackgroundSlider>
   );
-}
+};
