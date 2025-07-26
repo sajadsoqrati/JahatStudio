@@ -1,13 +1,18 @@
 import Form from "../components/Form";
 import { Navbar } from "../components/Navbar";
 import SocialNav from "../components/SocialNav";
+import { desktopUrl, desktopNavLinks } from "./Home";
 export function Contact() {
   return (
     <div className="bg-black w-screen h-screen h-max text-white">
-      <Navbar className="text-white font-normal flex whitespace-nowrap justify-center gap-10 pt-6 mr-2" />
+      <Navbar
+        navLinks={desktopNavLinks}
+        url={desktopUrl}
+        className="text-white font-normal flex whitespace-nowrap justify-center gap-10 pt-6 mr-2"
+      />
       <div className="grid grid-cols-[65px_1fr_1fr]">
         <div className="flex flex-col justify-center items-start">
-          <SocialNav />
+          <SocialNav className="font-large gap-4 flex flex-col justify-center ml-[2.5rem]" />
         </div>
         <div>
           <section id="form" className="flex flex-col items-center ml-20">

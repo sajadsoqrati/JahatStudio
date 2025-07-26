@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
+import { desktopUrl, desktopNavLinks } from "../pages/Home";
 interface CategoryProps {
   onClick: (category: string) => void;
 }
@@ -17,8 +18,12 @@ const Category = (props: CategoryProps) => {
   ];
   return (
     <div className="bg-black ">
-      <Navbar className="text-white font-normal flex flex-auto whitespace-nowrap justify-center gap-10 pt-6 mr-2" />
-      <nav className="text-white text-sm gap-7 flex text-center items-start justify-center mt-6 mr-6">
+      <Navbar
+        navLinks={desktopNavLinks}
+        url={desktopUrl}
+        className="text-white font-normal flex flex-auto whitespace-nowrap justify-center gap-10 pt-6 mr-2"
+      />
+      <nav className="text-white text-sm gap-7 flex text-center items-start justify-center mt-6 mr-7">
         {categoryName.map((item, i) => (
           <Link key={i} to={"/Projects.tsx"}>
             <button

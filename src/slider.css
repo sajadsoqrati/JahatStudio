@@ -24,3 +24,9 @@
  ul.slick-dots{
    max-width: fit-content;
  }
+.slick-dots-mobile {
+  top: 50%;
+  right:2.5rem;
+  gap: 0.5rem;
+  display: inline;
+ }

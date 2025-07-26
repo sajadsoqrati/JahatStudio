@@ -1,15 +1,21 @@
 import { Navbar } from "../components/Navbar";
 import SocialNav from "../components/SocialNav";
+import { desktopNavLinks, desktopUrl } from "./Home";
 export function About() {
   return (
     <>
-      <div className="w-screen min-h-screen h-max bg-black text-white flex flex-col text-center items-center justify-center">
-        <Navbar className="text-white font-normal flex whitespace-nowrap justify-center h-content h-[24px] gap-x-10 mb-10 mt-6 mr-2" />
+      <div className="bg-black text-white flex flex-col text-center justify-center">
+        <Navbar
+          navLinks={desktopNavLinks}
+          url={desktopUrl}
+          className="text-white font-normal flex gap-10 whitespace-nowrap justify-center  mb-10 mt-6 mr-2"
+        />
+
         <div className="grid grid-cols-[65px_1fr] w-screen">
-          <div className="flex flex-col justify-center mb-52 mr-100 ">
-            <SocialNav />
+          <div className="flex flex-col justify-center mb-20">
+            <SocialNav className="font-large gap-4 flex flex-col justify-center ml-[2.5rem]" />
           </div>
-          <div>
+          <div className="mr-16 mt-4">
             <div className="mb-20 mt-10">
               <h2 className="mb-5">ABOUT US</h2>
               <p className=" font-extralight text-[#868686]">
@@ -31,8 +37,8 @@ export function About() {
                 marketing for its customers.
               </p>
             </div>
-            <div className="mb-50">
-              <h2 className="mb-5">OUR PURPOSE</h2>
+            <div className="mb-32.5">
+              <h2 className="pb-4">OUR PURPOSE</h2>
               <p className=" font-extralight text-[#868686]">
                 Our main goal is to help design and produce creative content to
                 build a better world around us in terms of aesthetics. <br />

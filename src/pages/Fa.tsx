@@ -1,10 +1,14 @@
 import { BackgroundSlider } from "../components/BackgroundSlider";
 import { Navbar } from "../components/Navbar";
-
+import { desktopNavLinks, desktopUrl } from "./Home";
 export const Fa = () => {
   return (
-    <BackgroundSlider className="grid grid-row-span-2">
-      <Navbar className="text-white font-normal flex flex-auto cursor-pointer whitespace-nowrap justify-center gap-10 mt-5 mr-2" />
+    <BackgroundSlider className="w-screen h-screen bg-center border-black  border-2 border-black bg-no-repeat bg-contain">
+      <Navbar
+        navLinks={desktopNavLinks}
+        url={desktopUrl}
+        className="text-white font-normal flex flex-auto cursor-pointer whitespace-nowrap justify-center gap-10 mt-5 mr-2"
+      />
     </BackgroundSlider>
   );
 };

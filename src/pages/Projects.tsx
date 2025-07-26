@@ -15,12 +15,12 @@ export const Projects = () => {
       <div>
         <Category onClick={clickHandler} />
       </div>
-      <div className="w-screen min-h-screen bg-black text-white">
+      <div className="w-auto min-h-screen bg-black text-white">
         <div className=" grid grid-cols-3 gap-x-10 gap-y-6 mx-[6rem] pt-15">
           {page.map((project) => (
             <figure key={project.id}>
               <img
-                className="rounded-3xl hover:border-2 border-sky-400"
+                className="rounded-3xl hover:border-2 border-[rgb(104,200,163)]"
                 src={project.src}
                 alt={project.name}
               />

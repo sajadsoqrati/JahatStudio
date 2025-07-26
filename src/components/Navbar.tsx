@@ -1,40 +1,24 @@
 import { Link } from "react-router-dom";
 import "../index.css";
 import { useState } from "react";
+
 interface NavbarProps {
   className: string;
+  url: string[];
+  navLinks: string[];
 }
 export function Navbar(props: NavbarProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const navLinks: string[] = [
-    "HOME",
-    "ABOUT",
-    "OUR TEAM",
-    "CONTACT",
-    "PROJECT",
-    "EDUCATION",
-    "FA",
-  ];
-  const url: string[] = [
-    "/",
-    "/About.tsx",
-    "/About.tsx",
-    "/Contact.tsx",
-    "/Projects.tsx",
-    "/Education.tsx",
-    "/Fa.tsx",
-  ];
-
   return (
     <nav className={props.className}>
-      {navLinks.map((item, i) => (
-        <Link key={i} to={url[i]}>
+      {props.navLinks.map((item, i) => (
+        <Link key={i} to={props.url[i]}>
           <button
             onClick={() => setActiveIndex(i)}
             className={
               i === activeIndex
-                ? "text-[rgb(104,200,163)] cursor-pointer hover:text-[rgb(104,200,163)]	active:scale-90"
-                : "cursor-pointer hover:text-[rgb(104,200,163)]	active:scale-90 "
+                ? "text-[rgb(104,200,163)] cursor-pointer hover:text-[rgb(104,200,163)]"
+                : "cursor-pointer hover:text-[rgb(104,200,163)] "
             }
           >
             {item}

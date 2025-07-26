@@ -1,8 +1,10 @@
 import Slider from "react-slick";
 import "../slider.css";
+import useMediaQuery from "../assets/hooks/useMediaQuery";
 interface BackgroundSliderProps {
   children?: React.ReactNode;
   className: string;
+  divClassName?: string;
 }
 
 const images = [
@@ -15,9 +17,12 @@ const images = [
 export const BackgroundSlider: React.FC<BackgroundSliderProps> = ({
   children,
   className,
+  divClassName,
 }) => {
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
+
   const settings = {
-    dots: true,
+    dots: isSmallScreen ? false : true,
     autoplay: true,
     infinite: true,
     speed: 1200,
@@ -27,12 +32,12 @@ export const BackgroundSlider: React.FC<BackgroundSliderProps> = ({
     pauseOnHover: false,
   };
   return (
-    <div className="  w-screen h-screen ">
-      <Slider {...settings} className={className}>
+    <div className={divClassName}>
+      <Slider {...settings}>
         {images.map((img, i) => (
           <div key={i}>
             <div
-              className="w-screen h-screen bg-center border-black  border-2 border-black bg-no-repeat bg-contain"
+              className={className}
               style={{ backgroundImage: `url(${img})` }}
             >
               {children}
