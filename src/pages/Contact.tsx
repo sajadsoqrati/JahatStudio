@@ -46,7 +46,7 @@ export function Contact() {
             id="location"
             className={
               isSmallScreen
-                ? "bg-black flex flex-col items-center pt-30 pb-10"
+                ? "bg-black flex flex-col items-center pt-20 pb-10"
                 : "flex flex-col items-center mt-30 mr-30"
             }
           >
@@ -64,8 +64,8 @@ export function Contact() {
             <h3 className="font-light mt-4 text-xl text-[#868686]">
               Jahat Creative Communication
             </h3>
-            <address className="font-extralight mt-1 text-center text-[#868686]">
-              Iran, Guilan, Rasht, Shahid Beheshti ‌‌Broadway, Rudbari Street
+            <address className="font-extralight mt-1 px-2 text-center text-[#868686]">
+              Iran, Guilan, Rasht, Golsar, 104 street
             </address>
             <p className="font-extralight text-[#868686]">
               Phone: 013-33524557 • 0993-0099-475

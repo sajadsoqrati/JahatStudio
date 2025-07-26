@@ -11,17 +11,21 @@ const SocialNav = (props: socialNave) => {
   return (
     <nav className={props.className}>
       <a
-        href="https://www.linkedin.com"
+        href="https://linkedin.com/in/jahatstudio"
         target="_blank"
         rel="noopener noreferrer"
       >
         <FaLinkedin color="white" size={isSmallScreen ? 16 : 24} />
       </a>
-      <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://t.me/jahatstudio"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FaTelegram color="white" size={isSmallScreen ? 16 : 24} />
       </a>
       <a
-        href="https://www.instagram.com/"
+        href="https://www.instagram.com/jahatstudio"
         target="_blank"
         rel="noopener noreferrer"
       >
