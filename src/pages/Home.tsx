@@ -1,6 +1,7 @@
 import useMediaQuery from "../assets/hooks/useMediaQuery";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Contact } from "./Contact";
 import { Navbar } from "../components/Navbar";
 import SocialNav from "../components/SocialNav";
 import { BackgroundSlider } from "../components/BackgroundSlider";
@@ -30,7 +31,12 @@ export const desktopUrl: string[] = [
   "/Education.tsx",
   "/Fa.tsx",
 ];
-export const mobileUrl: string[] = ["#home", "#projects", "#contact", "#about"];
+export const mobileUrl: string[] = [
+  "./#home",
+  "./#projects",
+  "./#contact",
+  "./#about",
+];
 export function Home() {
   const isSmallScreen = useMediaQuery("(max-width:600px)");
   const desktop = (
@@ -114,6 +120,9 @@ export function Home() {
       </section>
       <section id="projects">
         <Projects />
+      </section>
+      <section id="contact">
+        <Contact />
       </section>
     </div>
   );

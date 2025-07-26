@@ -1,6 +1,7 @@
 import { useForm, type FieldValues } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import useMediaQuery from "../assets/hooks/useMediaQuery";
 const schema = z.object({
   firstName: z.string().min(3, { message: "must be at least 3 characters." }),
   lastName: z.string().min(3, { message: "must be at least 3 characters." }),
@@ -21,6 +22,7 @@ type FormData = z.infer<typeof schema>;
 }*/
 
 const Form = () => {
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
   const {
     register,
     handleSubmit,
@@ -37,7 +39,11 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-xl py-4 pb-4 px-8 bg-[rgb(58,58,58)] w-109 "
+      className={
+        isSmallScreen
+          ? "rounded-xl py-4 pb-4  bg-[rgba(60, 60, 60, 1)] w-93 "
+          : "rounded-xl py-4 pb-4 px-8 bg-[rgb(58,58,58)] w-109 "
+      }
     >
       <div className="flex flex-col items-start">
         <label htmlFor="Name" className=" text-2xl mb-1 text-white ">
