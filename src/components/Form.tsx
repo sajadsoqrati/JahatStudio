@@ -28,9 +28,11 @@ const Form = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
-
+  const API = import.meta.env.VITE_API_URL;
   const onSubmit = (data: FieldValues) => {
-    fetch("http://localhost:5000/api/contact", {
+    //https://contact-api.onrender.com/api/contact
+    //http://localhost:5000/api/contact
+    fetch(`${API}/api/contact`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
