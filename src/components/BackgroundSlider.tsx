@@ -8,11 +8,11 @@ interface BackgroundSliderProps {
 }
 
 const images = [
-  "http://localhost:5000/images/bgpics/p100.jpg",
-  "http://localhost:5000/images/bgpics/P200.jpg",
-  "http://localhost:5000/images/bgpics/P300.jpg",
-  "http://localhost:5000/images/bgpics/P400.jpg",
-  "http://localhost:5000/images/bgpics/P500.jpg",
+  "https://jahatstudiobackend.onrender.com/images/bgpics/p100.jpg",
+  "https://jahatstudiobackend.onrender.com/images/bgpics/P200.jpg",
+  "https://jahatstudiobackend.onrender.com/images/bgpics/P300.jpg",
+  "https://jahatstudiobackend.onrender.com/images/bgpics/P400.jpg",
+  "https://jahatstudiobackend.onrender.com/images/bgpics/P500.jpg",
 ];
 export const BackgroundSlider: React.FC<BackgroundSliderProps> = ({
   children,
