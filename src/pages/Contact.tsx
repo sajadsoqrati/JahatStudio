@@ -53,7 +53,7 @@ export function Contact() {
             <a href="https://maps.app.goo.gl/4gRJqcTGBDdFUKKG8" target="_blank">
               <img
                 className="mb-10"
-                src="http://localhost:5000/images/map.svg"
+                src="https://jahatstudiobackend.onrender.com/images/map.svg"
                 alt="map"
               />
             </a>
