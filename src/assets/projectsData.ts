@@ -44,5 +44,10 @@ export const projectsData: ProjectsType[] = [
     name:"Betonic",
     src:"https://jahatstudiobackend.onrender.com/images/projects/Betonicc.jpg",
     category:"Video"
+  },{
+    id: 8,
+    name:"Motion graphy",
+    src:"https://jahatstudiobackend.onrender.com/images/projects/motion.png",
+    category:"Motion"
   }
 ];

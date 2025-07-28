@@ -19,6 +19,7 @@ const Category = (props: CategoryProps) => {
     "Print",
     "Video",
     "Websites",
+    "Motion",
   ];
   const desktopCategory = (
     <div className="bg-black ">
@@ -27,7 +28,7 @@ const Category = (props: CategoryProps) => {
         url={desktopUrl}
         className="text-white font-normal flex flex-auto whitespace-nowrap justify-center gap-10 pt-6 mr-2"
       />
-      <nav className="text-white text-sm gap-7 flex text-center items-start justify-center mt-6 mr-7">
+      <nav className="text-white text-sm gap-5 flex text-center items-start justify-center mt-6 mr-2">
         {categoryName.map((item, i) => (
           <Link key={i} to={"/Projects.tsx"}>
             <button

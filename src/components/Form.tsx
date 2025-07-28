@@ -44,7 +44,7 @@ const Form = () => {
       className={
         isSmallScreen
           ? "rounded-xl py-4 pb-4  bg-[rgba(60, 60, 60, 1)] w-85 "
-          : "rounded-xl py-4 pb-4 pl-8 pr-4 bg-[rgb(58,58,58)] w-109 "
+          : "rounded-xl py-4 pb-4 pl-12  bg-[rgb(58,58,58)] w-109 "
       }
     >
       <div className="flex flex-col items-start">
@@ -126,7 +126,7 @@ const Form = () => {
         ></textarea>
       </div>
       <div className=" flex justify-center">
-        <button className="mt-6 hover:text-sky-400 active:scale-90 font-bold text-xl">
+        <button className="mt-6  mr-8 hover:text-sky-400 active:scale-90 font-bold text-xl">
           SUBMIT
         </button>
       </div>
