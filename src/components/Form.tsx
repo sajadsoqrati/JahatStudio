@@ -28,15 +28,24 @@ const Form = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
-  const API = import.meta.env.VITE_API_URL;
-  const onSubmit = (data: FieldValues) => {
-    //https://contact-api.onrender.com/api/contact
-    //http://localhost:5000/api/contact
-    fetch(`${API}/api/contact`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+  const onSubmit = async (data: FieldValues) => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      
+      if (response.ok) {
+        alert('Message sent successfully!');
+        // Reset form here if needed
+      } else {
+        alert('Error sending message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error sending message. Please try again.');
+    }
   };
   return (
     <form
