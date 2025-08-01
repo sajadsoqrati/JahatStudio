@@ -8,46 +8,46 @@ export const projectsData: ProjectsType[] = [
   {
     id: 1,
     name:"Phonix",
-    src:"https://jahatstudiobackend.onrender.com/images/projects/Billboard.jpg",
+    src:"/images/projects/Billboard.jpg",
     category:"Billboard"
   },
   {
     id: 2,
     name:"Jewelry",
-    src:"https://jahatstudiobackend.onrender.com/images/projects/Photography.jpg",
+    src:"/images/projects/Photography.jpg",
     category:"Photography"
   },
   {
     id: 3,
     name:"CVA LoGo",
-    src:"https://jahatstudiobackend.onrender.com/images/projects/Branding.jpg",
+    src:"/images/projects/Branding.jpg",
     category:"Branding"
   },
   {
     id: 4,
     name:"Ibit",
-    src:"https://jahatstudiobackend.onrender.com/images/projects/Print.jpg",
+    src:"/images/projects/Print.jpg",
     category:"Print"
   },{
     id: 5,
     name:"jahat",
-    src:"https://jahatstudiobackend.onrender.com/images/projects/Jwl 2.jpg",
+    src:"/images/projects/Jwl 2.jpg",
     category:"Photography"
   },{
     id: 6,
     name:"Jewelry",
-    src:"https://jahatstudiobackend.onrender.com/images/projects/Jahat.jpg",
+    src:"/images/projects/Jahat.jpg",
     category:"Photography"
   },
   {
     id: 7,
     name:"Betonic",
-    src:"https://jahatstudiobackend.onrender.com/images/projects/Betonicc.jpg",
+    src:"/images/projects/Betonicc.jpg",
     category:"Video"
   },{
     id: 8,
     name:"Motion graphy",
-    src:"https://jahatstudiobackend.onrender.com/images/projects/motion.png",
+    src:"/images/projects/motion.png",
     category:"Motion"
   }
 ];
