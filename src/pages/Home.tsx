@@ -64,7 +64,7 @@ export function Home() {
             <div className="= flex flex-col mt-20 mr-2 items-center ">
               <img
                 className="= w-50 mb-4"
-                src="https://jahatstudiobackend.onrender.com/images/logoj.svg"
+                src="/images/logoj.svg"
                 alt="jahatStudioLogo"
               />
               <p className="= font-extralight text-[#868686]">
@@ -105,7 +105,7 @@ export function Home() {
                 <div className="flex flex-col items-center mt-10 mr-15">
                   <img
                     className="mb-3"
-                    src="https://jahatstudiobackend.onrender.com/images/logoj.svg"
+                    src="/images/logoj.svg"
                     alt="jahatStudioLogo"
                     width="130"
                     height="37"
