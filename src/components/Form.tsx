@@ -30,21 +30,26 @@ const Form = () => {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
   const onSubmit = async (data: FieldValues) => {
     try {
+      console.log('Submitting form data:', data);
+      
       const response = await fetch('/api/contact', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
       
+      const result = await response.json();
+      console.log('Response:', result);
+      
       if (response.ok) {
         alert('Message sent successfully!');
         // Reset form here if needed
       } else {
-        alert('Error sending message. Please try again.');
+        alert(`Error: ${result.error || 'Unknown error'}`);
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Error sending message. Please try again.');
+      alert('Network error. Please check your connection and try again.');
     }
   };
   return (

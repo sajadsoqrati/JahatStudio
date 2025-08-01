@@ -1,6 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
 exports.handler = async (event, context) => {
   // Enable CORS
   const headers = {
@@ -42,30 +39,19 @@ exports.handler = async (event, context) => {
     // Add timestamp
     contact.timestamp = new Date().toISOString();
     
-    // Read existing contacts
-    const contactsPath = path.join(__dirname, '../../data/contacts.json');
-    let contacts = [];
+    // Log the contact data (you can view this in Netlify function logs)
+    console.log('New contact submission:', contact);
     
-    // Create data directory if it doesn't exist
-    const dataDir = path.dirname(contactsPath);
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
-    
-    if (fs.existsSync(contactsPath)) {
-      contacts = JSON.parse(fs.readFileSync(contactsPath, 'utf8'));
-    }
-    
-    // Add new contact
-    contacts.push(contact);
-    
-    // Write back to file
-    fs.writeFileSync(contactsPath, JSON.stringify(contacts, null, 2));
-    
+    // For now, just return success
+    // Later you can integrate with a database or email service
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ success: true, message: 'Contact saved successfully' })
+      body: JSON.stringify({ 
+        success: true, 
+        message: 'Contact received successfully',
+        data: contact
+      })
     };
     
   } catch (error) {
@@ -73,7 +59,7 @@ exports.handler = async (event, context) => {
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: 'Internal server error' })
+      body: JSON.stringify({ error: 'Internal server error', details: error.message })
     };
   }
 }; 
