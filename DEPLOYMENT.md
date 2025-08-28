@@ -27,14 +27,13 @@ If you need environment variables, add them in Netlify dashboard:
 - Netlify will automatically build and deploy your site
 
 ## Features
-- ✅ Contact form with Netlify Functions
 - ✅ Static image serving
 - ✅ Automatic HTTPS
 - ✅ Global CDN
-- ✅ Form submissions stored in JSON file
 
-## API Endpoints
-- `POST /api/contact` - Submit contact form
+## API Endpoints (for PHP/shared hosting)
+- `POST /api/contact.php` - Submit contact form
+  - Place `public/api/contact.php` on your hosting
 
 ## Local Development
 ```bash
@@ -51,10 +50,9 @@ npm run build
 ## File Structure
 ```
 ├── src/                    # React source code
-├── public/                 # Static assets (images)
-├── netlify/
-│   └── functions/         # Serverless functions
-│       └── contact.js     # Contact form handler
+├── public/                 # Static assets (images, api for PHP)
+│   └── api/
+│       └── contact.php    # PHP contact form handler (for shared hosting)
 ├── netlify.toml           # Netlify configuration
 └── dist/                  # Build output (generated)
 ``` 
