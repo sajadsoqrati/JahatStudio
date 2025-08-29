@@ -3,7 +3,10 @@ import { Navbar } from "../components/Navbar";
 import { desktopNavLinks, desktopUrl } from "./Home";
 export const Fa = () => {
   return (
-    <BackgroundSlider className="w-screen h-screen bg-center border-black  border-2 border-black bg-no-repeat bg-contain">
+    <BackgroundSlider
+      divClassName="bg-black"
+      className="w-screen h-screen bg-center border-black  border-2  bg-no-repeat bg-contain"
+    >
       <Navbar
         navLinks={desktopNavLinks}
         url={desktopUrl}

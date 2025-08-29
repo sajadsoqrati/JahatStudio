@@ -1,19 +1,28 @@
 import { Navbar } from "../components/Navbar";
 import SocialNav from "../components/SocialNav";
 import useMediaQuery from "../assets/hooks/useMediaQuery";
-import { desktopNavLinks, desktopUrl } from "./Home";
+import {
+  desktopNavLinks,
+  desktopUrl,
+  MobileNaveLinks,
+  mobileUrl,
+} from "./Home";
 export function About() {
   const isSmallScreen = useMediaQuery("(max-width:600px)");
   return (
     <div
       className={
         isSmallScreen
-          ? "bg-black text-white flex flex-col text-center justify-center pt-130 px-3"
+          ? "bg-black text-white flex flex-col text-center justify-center pt-10 "
           : "bg-black text-white flex flex-col text-center justify-center"
       }
     >
       {isSmallScreen ? (
-        ""
+        <Navbar
+          navLinks={MobileNaveLinks}
+          url={mobileUrl}
+          className="fixed text-white text-xs w-screen h-auto bg-black font-normal flex justify-center cursor-pointer whitespace-nowrap top-0  z-10  gap-4 py-4 border-b-1 mr-2"
+        />
       ) : (
         <Navbar
           navLinks={desktopNavLinks}
@@ -23,7 +32,9 @@ export function About() {
       )}
 
       <div
-        className={isSmallScreen ? "" : "grid grid-cols-[65px_1fr] w-screen"}
+        className={
+          isSmallScreen ? "" : "grid grid-cols-[65px_1fr] h-screen w-screen"
+        }
       >
         {isSmallScreen ? (
           ""
@@ -41,7 +52,7 @@ export function About() {
         >
           <div className="mb-20 mt-10">
             <h2 className="mb-5">ABOUT US</h2>
-            <p className=" font-extralight text-[#868686]">
+            <p className=" max-md:w-[80vw] max-md:text-justify font-extralight text-[#868686]">
               JAHAT is a creative communications studio that specializes in
               advertising, design, digital, media, and social.
               <br /> We believe in todays creative content is the best way for
@@ -53,7 +64,7 @@ export function About() {
           </div>
           <div className="mb-20">
             <h2 className="mb-5">OUR MISSION</h2>
-            <p className=" font-extralight text-[#868686]">
+            <p className="max-md:w-[80vw] max-md:text-justify font-extralight text-[#868686]">
               A new way of looking at a brand, category, technology, customer
               experience or even how we run our business.
               <br /> Jahat reaches for optimizing the effectiveness of marketing
@@ -62,7 +73,7 @@ export function About() {
           </div>
           <div className="mb-32.5">
             <h2 className="pb-4">OUR PURPOSE</h2>
-            <p className=" font-extralight text-[#868686]">
+            <p className="max-md:w-[80vw] max-md:text-justify font-extralight text-[#868686]">
               Our main goal is to help design and produce creative content to
               build a better world around us in terms of aesthetics. <br />
               We help clients imagine the best they can be, write their stories

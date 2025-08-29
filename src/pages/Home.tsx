@@ -41,7 +41,10 @@ export function Home() {
   const isSmallScreen = useMediaQuery("(max-width:600px)");
   const desktop = (
     <>
-      <BackgroundSlider className="w-screen h-screen bg-center border-black  border-2 border-black bg-no-repeat bg-contain">
+      <BackgroundSlider
+        divClassName="bg-black"
+        className="w-screen h-screen bg-center   border-2 border-black bg-no-repeat bg-contain"
+      >
         <Navbar
           navLinks={desktopNavLinks}
           url={desktopUrl}
@@ -61,7 +64,7 @@ export function Home() {
                 A Place To Create
               </h1>
             </div>
-            <div className="= flex flex-col mt-20 mr-2 items-center ">
+            <div className=" flex flex-col mt-20 mr-2 items-center ">
               <img
                 className="= w-50 mb-4"
                 src="/images/logoj.svg"
