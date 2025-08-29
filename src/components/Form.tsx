@@ -30,26 +30,26 @@ const Form = () => {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
   const onSubmit = async (data: FieldValues) => {
     try {
-      console.log('Submitting form data:', data);
-      
-      const response = await fetch('/api/contact.php', {
+      console.log("Submitting form data:", data);
+
+      const response = await fetch("/api/contact.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      
+
       const result = await response.json();
-      console.log('Response:', result);
-      
+      console.log("Response:", result);
+
       if (response.ok) {
-        alert('Message sent successfully!');
+        alert("Message sent successfully!");
         // Reset form here if needed
       } else {
-        alert(`Error: ${result.error || 'Unknown error'}`);
+        alert(`Error: ${result.error || "Unknown error"}`);
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Network error. Please check your connection and try again.');
+      console.error("Error:", error);
+      alert("Network error. Please check your connection and try again.");
     }
   };
   return (
@@ -67,13 +67,13 @@ const Form = () => {
         </label>
         <div>
           <input
-            placeholder="Firstname"
+            placeholder="&nbsp;&nbsp; Firstname"
             {...register("firstName" /*{ required: true, minLength: 3 }*/)}
             type="text"
             className=" bg-white text-black rounded-sm w-40 ml-1 mr-1"
           />
           <input
-            placeholder="Lastname"
+            placeholder="&nbsp;&nbsp;Lastname"
             {...register("lastName" /*{ required: true, minLength: 3 }*/)}
             type="text"
             className=" bg-white text-black rounded-sm ml-1 w-40"
@@ -131,7 +131,7 @@ const Form = () => {
           htmlFor="help"
           className=" text-2xl mb-1.5 ml-1  mt-8 text-white "
         >
-          How Can We Help You?*
+          How Can We Help You?
         </label>
         <textarea
           {...register("help")}

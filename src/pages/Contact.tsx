@@ -60,7 +60,11 @@ export function Contact() {
             }
           >
             <a href="https://maps.app.goo.gl/4gRJqcTGBDdFUKKG8" target="_blank">
-              <img className="mb-10" src="/images/map.svg" alt="map" />
+              <img
+                className="mb-10 max-md:w-[80vw]"
+                src="/images/map.svg"
+                alt="map"
+              />
             </a>
 
             <h1 className="text-3xl font-bold mb-4">

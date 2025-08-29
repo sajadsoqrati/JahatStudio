@@ -48,15 +48,11 @@ export const Projects = () => {
               }
             >
               <img
-                className={
-                  isSmallScreen
-                    ? "rounded-xl hover:border-2 border-[rgb(104,200,163)]   "
-                    : "rounded-3xl hover:border-2 border-[rgb(104,200,163)]"
-                }
+                className={isSmallScreen ? "rounded-xl    " : "rounded-3xl "}
                 src={project.src}
                 alt={project.name}
               />
-              <figcaption className=" hover:text-sky-400 text-la text-center mt-2 ">
+              <figcaption className="max-md:mb-5 text-la text-center mt-2 ">
                 {project.name}
               </figcaption>
             </figure>
