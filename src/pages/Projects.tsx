@@ -35,7 +35,7 @@ export const Projects = () => {
           className={
             isSmallScreen
               ? "grid grid-cols-1  max-w-[80vw] mx-auto  "
-              : " grid grid-cols-3 gap-x-10 gap-y-6 mx-[6rem] pt-15"
+              : " grid md:grid-cols-2  lg:grid-cols-3 gap-x-10 gap-y-6 mx-[6rem] pt-15"
           }
         >
           {page.map((project) => (

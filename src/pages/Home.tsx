@@ -9,10 +9,10 @@ import { BackgroundSlider } from "../components/BackgroundSlider";
 import { Projects } from "./Projects";
 export const desktopNavLinks: string[] = [
   "HOME",
-  "ABOUT",
-  "OUR TEAM",
-  "CONTACT",
   "PROJECT",
+  "CONTACT",
+  "OUR TEAM",
+  "ABOUT",
   "EDUCATION",
   "FA",
 ];
@@ -24,10 +24,10 @@ export const MobileNaveLinks: string[] = [
 ];
 export const desktopUrl: string[] = [
   "/",
-  "/About.tsx",
-  "/About.tsx",
-  "/Contact.tsx",
   "/Projects.tsx",
+  "/Contact.tsx",
+  "/About.tsx",
+  "/About.tsx",
   "/Education.tsx",
   "/Fa.tsx",
 ];

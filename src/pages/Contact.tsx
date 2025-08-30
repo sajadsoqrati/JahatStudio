@@ -27,41 +27,44 @@ export function Contact() {
       )}
       <div
         className={
-          isSmallScreen ? "flex flex-col" : "grid grid-cols-[65px_1fr_1fr]"
+          isSmallScreen
+            ? "flex flex-col mt-5"
+            : "grid lg:grid-cols-[65px_1fr_1fr] md:grid-cols-1 md:gap-5"
         }
       >
         {isSmallScreen ? (
           ""
         ) : (
           <div className="flex flex-col justify-center items-start">
-            <SocialNav className="font-large gap-4 flex flex-col justify-center ml-[2.5rem]" />
+            <SocialNav className="font-large gap-4 flex flex-col justify-center ml-[2.5rem] max-lg:hidden" />
           </div>
         )}
-        <div>
+        <div >
           <section
             id="form"
             className={
               isSmallScreen
                 ? "flex flex-col items-center"
-                : "flex flex-col items-center ml-20"
+                : "flex flex-col items-center ml-20  max-lg:mx-auto"
             }
           >
             <h1 className="text-3xl font-bold mt-10 mb-4">Get In Touch!</h1>
             <Form />
           </section>
         </div>
-        <div>
+        <div className="bg-black">
           <section
             id="location"
             className={
               isSmallScreen
                 ? "bg-black flex flex-col items-center pt-20 pb-10"
-                : "flex flex-col items-center mt-30 mr-30"
+                : "flex flex-col items-center mt-30 mr-30 max-lg:mx-auto  max-lg:mb-40"
+              
             }
           >
             <a href="https://maps.app.goo.gl/4gRJqcTGBDdFUKKG8" target="_blank">
               <img
-                className="mb-10 max-md:w-[80vw]"
+                className="mb-10 max-lg:w-[70vw]"
                 src="/images/map.svg"
                 alt="map"
               />
